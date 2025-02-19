@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/OrderBook.css";
 
 // Retrieve arrow image URL from the environment variable
-const ARROW_URL = process.env.REACT_APP_ARROW_URL;
+const ARROW_URL = "https://img.notionusercontent.com/s3/prod-files-secure%2Ffc9ba8a0-5718-48bf-8a98-e6937e8130a5%2Fd0131074-1581-4d4f-b194-7da5deaa736e%2FIconArrowDown.svg/size/?exp=1739625486&sig=EGT0dfClOAvUu0o3JEx6BanmCzdWffuUi9lnjZARe1c";
 
 /**
  * Determines the display styles based on the price direction.
