@@ -1,0 +1,30 @@
+/* Flash background and size animations */
+.flash-bg-green,
+.flash-size-green {
+  animation: flash-green 0.5s;
+}
+
+.flash-bg-red,
+.flash-size-red {
+  animation: flash-red 0.5s;
+}
+
+/* Keyframes for green flash animation */
+@keyframes flash-green {
+  0% {
+    background-color: rgba(0, 177, 93, 0.5);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Keyframes for red flash animation */
+@keyframes flash-red {
+  0% {
+    background-color: rgba(255, 91, 90, 0.5);
+  }
+  100% {
+    background-color: transparent;
+  }
+}

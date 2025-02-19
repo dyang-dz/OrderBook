@@ -1,0 +1,54 @@
+/* ===============================
+   Main Application Container
+   =============================== */
+.App {
+  text-align: center; /* Center align text within the app container */
+}
+
+/* ===============================
+   App Logo Styling
+   =============================== */
+.App-logo {
+  height: 40vmin;         /* Responsive height relative to viewport */
+  pointer-events: none;   /* Disable mouse events on the logo */
+}
+
+/* Apply logo spin animation only if the user hasn't requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* ===============================
+   App Header Styling
+   =============================== */
+.App-header {
+  background-color: #282c34;        /* Dark header background */
+  min-height: 100vh;                /* Full viewport height */
+  display: flex;                    /* Use flex layout */
+  flex-direction: column;           /* Stack children vertically */
+  align-items: center;              /* Center items horizontally */
+  justify-content: center;          /* Center items vertically */
+  font-size: calc(10px + 2vmin);     /* Responsive font size */
+  color: white;                     /* White text color */
+}
+
+/* ===============================
+   App Link Styling
+   =============================== */
+.App-link {
+  color: #61dafb; /* Link color matching the React logo blue */
+}
+
+/* ===============================
+   Keyframes for Logo Spin Animation
+   =============================== */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

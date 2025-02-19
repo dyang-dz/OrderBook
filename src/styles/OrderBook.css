@@ -1,0 +1,165 @@
+/* ================================
+   Order Book Container & Title
+   ================================ */
+   .orderbook-container {
+    background-color: #131B29;
+    color: #F0F4F8;
+    padding: 1rem;
+    width: 100%;
+    max-width: 400px; /* Adjust max-width for larger screens */
+    margin: 1rem auto;
+    border-radius: 5px;
+  }
+  
+  .orderbook-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* ================================
+     Tables for Bids and Asks
+     ================================ */
+  .bids-table,
+  .asks-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Grid layout for table header and rows (3 columns) */
+  .table-header,
+  .order-row {
+    display: grid;
+    grid-template-columns: 0.5fr 0.6fr 1fr; /* Equal columns by default */
+    gap: 0.5rem; /* Spacing between columns */
+  }
+  
+  /* Header text colors */
+  .price-header,
+  .size-header,
+  .total-header {
+    color: #8698aa;
+  }
+  
+  /* ---------------------------
+     Cell Alignment Settings
+     --------------------------- */
+  /* Price cells: left-aligned */
+  .price-header,
+  .price-cell {
+    text-align: left;
+    padding-left: 4px;
+  }
+  
+  /* Size cells: right-aligned */
+  .size-header,
+  .size-cell {
+    text-align: right;
+    padding-right: 4px;
+  }
+  
+  /* Total cells: right-aligned */
+  .total-header,
+  .total-cell {
+    text-align: right;
+    padding-right: 4px;
+    position: relative;
+    overflow: hidden; /* For depth bar */
+  }
+  
+  /* ================================
+     Depth Bar (Accumulative Bar)
+     ================================ */
+  .depth-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0; /* Fills total-cell height */
+    transition: width 0.3s ease;
+    z-index: 0; /* Behind text */
+  }
+  
+  /* Asks depth bar: fills from left to right */
+  .asks-table .depth-bar {
+    right: 0;
+    left: auto;
+    background-color: rgba(255, 90, 90, 0.12);
+  }
+  
+  /* Bids depth bar: fills from right to left */
+  .bids-table .depth-bar {
+    right: 0;
+    left: auto;
+    background-color: rgba(16, 186, 104, 0.12);
+  }
+  
+  /* Total text above the depth bar */
+  .total-text {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ================================
+     Order Row Styles
+     ================================ */
+  .order-row {
+    cursor: pointer;
+    width: 100%;
+    padding: 4px 0;
+    margin-bottom: 2px;
+  }
+  
+  .order-row:hover {
+    background-color: #1E3059;
+  }
+  
+  /* ================================
+     Last Price Display Styles
+     ================================ */
+  .last-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    min-width: 220px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .last-price.up {
+    color: #00b15d !important;
+    background-color: rgba(16, 186, 104, 0.12) !important;
+  }
+  
+  .last-price.down {
+    color: #FF5B5A !important;
+    background-color: rgba(255, 90, 90, 0.12) !important;
+  }
+  
+  .last-price.same {
+    color: #F0F4F8 !important;
+    background-color: rgba(134, 152, 170, 0.12) !important;
+  }
+  
+  /* ================================
+     Responsive Adjustments
+     ================================ */
+  
+  /* For small devices, adjust grid and font sizes */
+  @media screen and (max-width: 480px) {
+    .table-header,
+    .order-row {
+      grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+      font-size: 0.9rem;
+    }
+  
+    .last-price {
+      font-size: 1.5rem;
+      padding: 10px;
+      min-width: auto;
+    }
+  }
+  
